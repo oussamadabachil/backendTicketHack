@@ -3,7 +3,6 @@ const moment = require("moment");
 var router = express.Router();
 require("../models/connexion");
 const trips = require("../models/trips");
-
 let dateOfTheDay = new Date().getTime();
 
 router.get("/", (req, res) => {
@@ -31,10 +30,7 @@ router.get("/getTrip/:departure/:arrival/:date", (req, res) => {
         res.json({ result: true, data: data });
       }else{
         res.json({ result: false, message: "No trip found" });
-      }
- 
-        
-   
+      }        
     });
 });
 
